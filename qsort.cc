@@ -52,7 +52,7 @@ int Partition(int list[], int lo, int hi)
 			lo++;
 
 			if (lo < hi) {
-				INST_R(x > list[lo])
+				INST_R(x > list[lo]);
 			}
 		}
 		// Swap the two items we've discovered on the wrong side of the key
