@@ -44,9 +44,7 @@ int Partition(int list[], int lo, int hi)
 		// Scan from the left until we find an item larger than the key
 		while ( (lo < hi) && (x > list[lo]) ) {
 
-			if (lo >= hi) {
-				break;
-			} else {
+			if (lo < hi) {
 				INST_R(list[lo]);
 			}
 
