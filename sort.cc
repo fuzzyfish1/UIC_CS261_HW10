@@ -19,7 +19,7 @@ int main()
 	}
 	// Sort the list by exchange sort or QuickSort - comment out the
 	// one you don't want to use
-	//XSort(l, listSize);
-	 QSort(l, 0, listSize-1);
+	XSort(l, listSize);
+	//QSort(l, 0, listSize-1);
 	return 0; // return success code
 }
