@@ -21,8 +21,8 @@ int Partition(int list[], int lo, int hi)
 	// Pick an arbitrary key, say half way through the list
 
 	INST_R(list[(lo+hi)/2]);
-
 	x = list[(lo+hi)/2];
+
 	// Now swap items until every item to the left of the key is smaller than
 	// the key, and every item to the right of the key is larger than the key
 	while (lo < hi) {
@@ -42,15 +42,17 @@ int Partition(int list[], int lo, int hi)
 		// you may need to edit this section below..
 
 		// Scan from the left until we find an item larger than the key
+		if (lo < hi) {
+			INST_R(list[lo]);
+		}
+
 		while ( (lo < hi) && (x > list[lo]) ) {
 
-			if (lo >= hi) {
-				break;
-			} else {
-				INST_R(list[lo]);
-			}
-
 			lo++;
+
+			if (lo < hi) {
+				INST_R(x > list[lo])
+			}
 		}
 		// Swap the two items we've discovered on the wrong side of the key
 		INST_R(list[lo]);
