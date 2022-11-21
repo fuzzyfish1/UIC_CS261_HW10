@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
+
 int Partition(int list[], int lo, int hi);
+
 void QSort(int list[], int lo, int hi)
 	// QuickSort - this simple version assumes no repeated items in the list
 {
@@ -19,6 +21,9 @@ int Partition(int list[], int lo, int hi)
 {
 	int x, tmp;
 	// Pick an arbitrary key, say half way through the list
+
+	INST_R(list[(lo+hi)/2]);
+
 	x = list[(lo+hi)/2];
 	// Now swap items until every item to the left of the key is smaller than
 	// the key, and every item to the right of the key is larger than the key
@@ -43,8 +48,15 @@ int Partition(int list[], int lo, int hi)
 			lo++;
 		}
 		// Swap the two items we've discovered on the wrong side of the key
+		INST_R(list[lo]);
 		tmp = list[lo];
+
+		INST_W(list[lo]);
+		INST_R(list[hi]);
+
 		list[lo] = list[hi];
+
+		INST_W(list[hi]);
 		list[hi] = tmp;
 	}
 	return lo; // this is where the key is now
