@@ -11,6 +11,7 @@ void QSort(int list[], int lo, int hi) {
 		// Now every item left of position k is smaller than the item at k,
 		// while every item right of position k is larger than the item at k
 		QSort(list, lo, k-1); // sort the sublist to the left of k
+		//cout << "temp" << endl;
 		QSort(list, k+1, hi); // sort the sublist to the right of k
 	}
 }
@@ -44,7 +45,7 @@ int Partition(int list[], int lo, int hi)
 
 		// Scan from the left until we find an item larger than the key
 		if (lo < hi) {
-			INST_R(list[lo]);
+//			INST_R(list[lo]);
 		}
 
 		while ( (lo < hi) && (x > list[lo]) ) {
@@ -52,13 +53,14 @@ int Partition(int list[], int lo, int hi)
 			lo++;
 
 			if (lo < hi) {
-				INST_R(x > list[lo]);
+//				INST_R(x > list[lo]);
 			}
 		}
 		// Swap the two items we've discovered on the wrong side of the key
 		INST_R(list[lo]);
 		tmp = list[lo];
 
+		//cout << "temp" <<endl;
 		INST_R(list[hi]);
 		list[lo] = list[hi];
 		INST_W(list[lo]);
