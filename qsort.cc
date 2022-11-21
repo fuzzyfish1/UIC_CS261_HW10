@@ -3,9 +3,7 @@ using namespace std;
 
 int Partition(int list[], int lo, int hi);
 
-void QSort(int list[], int lo, int hi)
-	// QuickSort - this simple version assumes no repeated items in the list
-{
+void QSort(int list[], int lo, int hi) {
 	int k;
 	if (lo < hi) {
 		// Partition the list into two sub-lists
