@@ -37,3 +37,4 @@ void XSort(int list[], int n)
 		INST_W(list[i]);
 	}
 }
+
