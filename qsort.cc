@@ -54,13 +54,13 @@ int Partition(int list[], int lo, int hi)
 		INST_R(list[lo]);
 		tmp = list[lo];
 
-		INST_W(list[lo]);
 		INST_R(list[hi]);
-
 		list[lo] = list[hi];
+		INST_W(list[lo]);
 
-		INST_W(list[hi]);
 		list[hi] = tmp;
+		INST_W(list[hi]);
+
 	}
 	return lo; // this is where the key is now
 }
