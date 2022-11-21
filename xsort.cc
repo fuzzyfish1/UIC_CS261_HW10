@@ -9,8 +9,8 @@ void XSort(int list[], int n)
 		// Remember the item at position i
 
 		INST_R(list[i]);
-
 		min = list[i];
+
 		min_j = i;
 		// Check the list to the right of position i for any smaller items
 		for (j=i+1; j<n; j++) {
@@ -30,7 +30,7 @@ void XSort(int list[], int n)
 		tmp = list[min_j];
 
 		INST_R(list[i]);
-		INST_R(list[min_j]);
+		INST_W(list[min_j]);
 
 		list[min_j] = list[i];
 
