@@ -45,7 +45,7 @@ int Partition(int list[], int lo, int hi)
 
 		// Scan from the left until we find an item larger than the key
 		if (lo < hi) {
-//			INST_R(list[lo]);
+			INST_R(list[lo]);
 		}
 
 		while ( (lo < hi) && (x > list[lo]) ) {
@@ -53,7 +53,7 @@ int Partition(int list[], int lo, int hi)
 			lo++;
 
 			if (lo < hi) {
-//				INST_R(x > list[lo]);
+				INST_R(x > list[lo]);
 			}
 		}
 		// Swap the two items we've discovered on the wrong side of the key
