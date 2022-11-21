@@ -30,11 +30,10 @@ void XSort(int list[], int n)
 		tmp = list[min_j];
 
 		INST_R(list[i]);
+		list[min_j] = list[i];
 		INST_W(list[min_j]);
 
-		list[min_j] = list[i];
-
-		INST_W(list[i]);
 		list[i] = tmp;
+		INST_W(list[i]);
 	}
 }
